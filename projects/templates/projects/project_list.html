@@ -4,16 +4,17 @@
 {% endblock %}
 
 {% block content %}
-{% for project in object_list %}
     <div class="content-section-a">
 
         <div class="container">
             <div class="row">
+                <a href="create/">Create a project</a>
+                {% for project in object_list %}
                 <div class="col-lg-5 col-sm-6">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
                     <h2 class="section-heading">{{ project.title }}</h2>
-                    <p>{{ project.created_at }}</p>
+                    <p>{{ project.created_at|date:"D d M Y"  }}</p>
                     <div
                       {% if project.difficulty == "beginner" %}
                          class = glossy-beginner
@@ -30,13 +31,15 @@
                   <!--  <p class="lead">Check out <a href="projects/">ongoing projects</a> that sick out participants and choose the idea and technology you want to work on.</p> -->
                 </div>
 
-                <a href="upload/">Upload a project</a>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
                   <hr class="section-heading-spacer">
                   <div class="clearfix"></div>
                     <!--<img class="img-responsive" src="/static/img/ipad-python.png" alt="" >!-->
-                  <img src = "{{project.image.url}}">
+                  {% if project.image %}
+                    <img src = "{{project.image.url}}">
+                  {% endif %}
                 </div>
+                {% endfor %}
             </div>
 
         </div>
@@ -47,5 +50,4 @@
 <div>
  </div>
 
-{% endfor %}
 {% endblock %}

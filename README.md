@@ -1,7 +1,7 @@
 # codeeve
 
 [![Requirements
-Status](https://requires.io/github/luminitacristinalazarescu/codeeve/requirements.svg?branch=master)](https://requires.io/github/luminitacristinalazarescu/codeeve/requirements/?branch=master)
+Status](https://requires.io/github/lluminita/codeeve/requirements.svg?branch=master)](https://requires.io/github/lluminita/codeeve/requirements/?branch=master)
 
 **Description**
 
@@ -18,12 +18,12 @@ pip install -r requirements/dev.txt
 ```
 python manage.py migrate
 ```
-* make sure you install python3
+* for this project we will use python3
 
 **Contributing**
 * fork repo
 * clone locally the fork
-* add this repo as upstream (git add upstream git@github.com:luminitacristinalazarescu/codeeve.git)
+* add this repo as upstream (git add upstream https://github.com/lluminita/codeeve.git)
 * work on a branch
-* make pull request (PR) against master branch of git@github.com:luminitacristinalazarescu/codeeve.git
+* make pull request (PR) against master branch of https://github.com/lluminita/codeeve.git
 

@@ -1,22 +1,25 @@
+from django.views.generic.list import ListView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.core.urlresolvers import reverse_lazy
 from .models import Project
 
-from django.shortcuts import render
-from django.views.generic.list import ListView
-from django.http import HttpResponseRedirect
 
-from .forms import UploadForm
+class ProjectCreate(CreateView):
+    template_name = 'projects/create_project.html'
+    model = Project
+    fields = '__all__'
+    success_url = reverse_lazy('project_list')
 
 
-def get_project(request):
-    if request.method == 'POST':
-        form = UploadForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect('/projects/')
-    else:
-        form = UploadForm()
+class ProjectUpdate(UpdateView):
+    model = Project
+    fields = '__all__'
+    success_url = reverse_lazy('project_list')
 
-    return render(request, 'projects/upload_project.html', {'form': form})
+
+class ProjectDelete(DeleteView):
+    model = Project
+    success_url = reverse_lazy('project_list')
 
 
 class ProjectListView(ListView):

@@ -7,7 +7,9 @@
     <div class="content-section-a">
 
         <div class="container">
+            {% if view.request.user.is_authenticated %}
             <a href="create/">Create a project</a>
+            {% endif %}
             {% for project in object_list %}
             <div class="row">
                 <div class="col-lg-5 col-sm-6">

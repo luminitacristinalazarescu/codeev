@@ -126,6 +126,7 @@ USE_TZ = True
 SITE_ID = 1
 ACCOUNT_LOGIN_REDIRECT_URL = '/projects'
 ACCOUNT_LOGOUT_ON_GET = True
+LOGIN_URL = '/accounts/github/login/?process=login'
 
 
 # Static files (CSS, JavaScript, Images)
